@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://bexpaungnhiu3"]
+
+[ext_resource type="PackedScene" uid="uid://bpqiq3x7mh0b1" path="res://MapLevels/level_1.tscn" id="1_1rcc4"]
+[ext_resource type="PackedScene" uid="uid://by2j523q3vjr4" path="res://player.tscn" id="2_oeav0"]
+[ext_resource type="PackedScene" uid="uid://d26pd6v1n81am" path="res://enemy.tscn" id="3_bu5ta"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_17c5i"]
+radius = 18.0
+height = 62.0
+
+[node name="Main" type="Node2D"]
+
+[node name="Level3" parent="." instance=ExtResource("1_1rcc4")]
+position = Vector2(165, 20)
+
+[node name="Player" parent="." instance=ExtResource("2_oeav0")]
+
+[node name="Area2D" type="Area2D" parent="."]
+disable_mode = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(438, 221)
+shape = SubResource("CapsuleShape2D_17c5i")
+
+[node name="Enemy" parent="." instance=ExtResource("3_bu5ta")]
+position = Vector2(927, 378)
